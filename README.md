@@ -1,4 +1,4 @@
-# pxnt-app
+# pxnt-app [![Netlify Status](https://api.netlify.com/api/v1/badges/6f6b46f1-aab7-4e21-bf62-dd0043687bc4/deploy-status)](https://app.netlify.com/projects/pxnt/deploys)
 
 A modern Vue 3 application built with Vite, TypeScript, Tailwind CSS, and Pinia for state management.
 
