@@ -1,10 +1,11 @@
 
 <template>
   <div
-    class="w-full md:min-w-[343px] max-h-max flex flex-col items-center px-6 py-7 bg-dark-secondary rounded-xl">
+    class="relative w-full md:min-w-[343px] max-h-max flex flex-col items-center px-6 py-7 bg-dark-secondary rounded-xl">
+    <Logo class="absolute -top-7 -left-7 w-20 h-20" />
     <div class="profile w-60 h-70 rounded-lg">
       <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFUAfyVe3Easiycyh3isP9wDQTYuSmGPsPQvLIJdEYvQ_DsFq5Ez2Nh_QjiS3oZ3B8ZPfK9cZQyIStmQMV1lDPLw"
+        src="/src/assets/profile_img.jpeg"
         alt="Profile" class="w-full h-full object-cover rounded-lg">
     </div>
 
@@ -49,4 +50,5 @@
 <script setup lang="ts">
 import ProfileContact from '~/components/Profile/ProfileContact.vue';
 import Button from '~/components/Button.vue';
+import Logo from '~/components/Logo.vue';
 </script>

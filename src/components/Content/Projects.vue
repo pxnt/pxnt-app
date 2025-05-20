@@ -14,7 +14,7 @@
           </svg>
         </div>
 
-        <div class="company text-2xl font-poppins font-semibold text-white">
+        <div class="project-name text-2xl max-w-11/12 font-poppins font-semibold text-white">
           Distributed File Storage System - Go
         </div>
 
@@ -41,7 +41,7 @@
           </svg>
         </div>
 
-        <div class="company text-xl font-poppins font-semibold text-white">
+        <div class="project-name text-xl max-w-11/12 font-poppins font-semibold text-white">
           Chain Reaction Multiplayer Game - Nodejs
         </div>
 

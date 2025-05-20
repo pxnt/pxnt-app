@@ -1,15 +1,17 @@
 <template>
-  <div class="bg-dark-primary w-screen h-screen overflow-y-scroll" @scroll="handleScroll" ref="scrollContainer">
-    <div class="container flex flex-col md:flex-row w-full gap-12 md:gap-24 max-w-6xl mx-auto py-20 px-6 md:px-10 transition-all duration-300">
+  <div ref="scrollContainer" class="relative bg-dark-primary w-screen h-screen overflow-y-scroll"
+    @scroll="handleScroll">
+    <div
+      class="container w-full max-w-6xl mx-auto flex flex-col md:flex-row gap-12 md:gap-24 pt-10 md:pt-20 pb-20 px-6 md:px-10 transition-all duration-300">
 
-        <!-- <Navbar class="mx-auto sticky top-0 z-10" /> -->
+      <!-- <Navbar class="mx-auto sticky top-0 z-10" /> -->
 
-        <Transition name="fade-in-down-profile" appear>
-          <Profile class="md:sticky top-10" />
-        </Transition>
-        <Transition name="fade-in-down-content" appear>
-          <Content class="" />
-        </Transition>
+      <Transition name="fade-in-down-profile" appear>
+        <Profile class="md:sticky md:top-10" />
+      </Transition>
+      <Transition name="fade-in-down-content" appear>
+        <Content class="" />
+      </Transition>
 
     </div>
   </div>
