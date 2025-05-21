@@ -21,6 +21,9 @@
 import Profile from '~/components/Profile/index.vue'
 import Content from '~/components/Content/index.vue'
 import { ref, onMounted } from 'vue'
+import useSessionTracking from '~/composables/useSessionTracking'
+
+const { addSessionTracking } = useSessionTracking()
 
 const scrollContainer = ref(null)
 const minHeight = 30 // px
@@ -43,6 +46,8 @@ const handleScroll = () => {
 onMounted(() => {
   // Set initial scrollbar height
   document.documentElement.style.setProperty('--scrollbar-height', `${minHeight}px`)
+
+  addSessionTracking();
 })
 </script>
 
