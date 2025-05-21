@@ -4,7 +4,6 @@ import tailwindcss from '@tailwindcss/vite'
 import { fileURLToPath } from 'node:url'
 
 export default defineConfig(({ command, mode }) => {
-  // console.log('meoww', command, mode, import.meta.url, fileURLToPath(new URL('./src', import.meta.url)))
 
   return {
     plugins: [
