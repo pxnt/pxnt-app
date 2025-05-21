@@ -1,4 +1,3 @@
-import useSupabase from './useSupabase';
 import type { SessionTracking } from '~/types/session_tracking';
 
 
@@ -24,12 +23,21 @@ export default function useSessionTracking() {
     return result;
   }
 
+  async function pushSessionTracking(payload: SessionTracking) {
+    try {
+      await fetch('/.netlify/functions/sessionTracking', {
+        method: 'POST',
+        body: JSON.stringify(payload),
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   async function addSessionTracking() {
     if (!checkIfNeedToTrack()) {
       return;
     }
-
-    const { pushSessionTracking } = useSupabase();
 
     const data = await getFingerprint();
 
@@ -51,6 +59,7 @@ export default function useSessionTracking() {
     }
 
     await pushSessionTracking(payload);
+
   }
 
   return {
