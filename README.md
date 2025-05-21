@@ -1,6 +1,6 @@
-# pxnt-app [![Netlify Status](https://api.netlify.com/api/v1/badges/6f6b46f1-aab7-4e21-bf62-dd0043687bc4/deploy-status)](https://app.netlify.com/projects/pxnt/deploys)
+# pxnt-app [![Netlify Status](https://api.netlify.com/api/v1/badges/6f6b46f1-aab7-4e21-bf62-dd0043687bc4/deploy-status)](https://app.netlify.com/sites/pxnt/deploys)
 
-A modern Vue 3 application built with Vite, TypeScript, Tailwind CSS, and Pinia for state management.
+A modern Vue 3 application built with Vite, TypeScript, Tailwind CSS, Pinia for state management, and Supabase for backend services.
 
 ## Features
 
@@ -9,7 +9,9 @@ A modern Vue 3 application built with Vite, TypeScript, Tailwind CSS, and Pinia 
 - 🧩 **TypeScript** - Enhanced type safety
 - 🎨 **Tailwind CSS** - Utility-first CSS framework
 - 🗃️ **Pinia** - Intuitive, type safe store for Vue
-- 🪝 **VueUse** - Collection of Vue Composition Utilities
+- 🔐 **Supabase** - Open source Firebase alternative
+- 📊 **Session Tracking** - Anonymous user session analytics
+- 📊 **FingerprintJs** - To generate unique device fingerprint per user
 
 ## Getting Started
 
@@ -29,6 +31,13 @@ A modern Vue 3 application built with Vite, TypeScript, Tailwind CSS, and Pinia 
 2. Install dependencies
    ```bash
    pnpm install
+   ```
+
+3. Set up environment variables
+   ```bash
+   # Create a .env file with the following variables
+   VITE_SUPABASE_URL=your_supabase_project_url
+   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
    ```
 
 ### Development
@@ -64,8 +73,12 @@ pxnt-app/
 │   ├── assets/       # Assets that will be processed
 │   ├── components/   # Vue components
 │   ├── composables/  # Vue composables (reusable composition functions)
+│   │   ├── useSupabase.ts      # Supabase client and operations
+│   │   └── useSessionTracking.ts # Session tracking functionality
 │   ├── config/       # Application configuration
 │   ├── stores/       # Pinia stores
+│   ├── types/        # TypeScript type definitions
+│   │   └── session_tracking.ts # Session tracking interfaces
 │   ├── views/        # Page components
 │   ├── App.vue       # Root component
 │   ├── main.ts       # Application entry point
@@ -86,6 +99,16 @@ pxnt-app/
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Pinia](https://pinia.vuejs.org/)
 - [VueUse](https://vueuse.org/)
+- [Supabase](https://supabase.io/) - Backend as a Service for authentication and database
+
+## Session Tracking
+
+The application includes anonymous session tracking capabilities:
+
+- Uses fingerprinting to identify unique sessions
+- Captures basic device information (screen resolution, platform, timezone)
+- Data is stored in Supabase
+- Users can opt out via local storage setting
 
 ## License
 
