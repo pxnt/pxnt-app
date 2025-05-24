@@ -12,12 +12,19 @@
       Specialize in transforming ideas <br> into beautifully crafted products.
     </div>
 
-    <div class="actions flex gap-2 mt-10 justify-center md:justify-start">
-      <a href="https://drive.google.com/file/d/1pO0DFVlQXuOrIzLYAxz6-lLr47T6fcGB/view?usp=sharing" download
-        target="_blank">
+    <div class="actions w-full flex gap-2 mt-10 justify-center md:justify-start">
+      <a 
+        href="https://drive.google.com/file/d/1pO0DFVlQXuOrIzLYAxz6-lLr47T6fcGB/view?usp=sharing" 
+        download
+        target="_blank"
+        class="w-full max-w-45"
+      >
         <Button title="Download CV" />
       </a>
-      <a href="mailto:prashantsingh3553@gmail.com">
+      <a 
+        href="mailto:prashantsingh3553@gmail.com"
+        class="w-full max-w-45"
+      >
         <Button title="Contact me" theme="secondary" />
       </a>
     </div>
