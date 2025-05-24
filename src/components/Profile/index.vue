@@ -44,7 +44,10 @@
       A Software Engineer who has developed countless innovative solutions.
     </div>
 
-    <a href="mailto:prashantsingh3553@gmail.com">
+    <a 
+      href="mailto:prashantsingh3553@gmail.com"
+      class="w-full max-w-45"
+    >
       <Button title="Let's talk" class="mt-5" />
     </a>
   </div>

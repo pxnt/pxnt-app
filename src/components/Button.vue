@@ -1,5 +1,5 @@
 <template>
-  <div :class="bgColor" class="button relative flex items-center justify-center rounded-lg w-45 h-11 cursor-pointer">
+  <div :class="bgColor" class="button relative flex items-center justify-center rounded-lg max-w-45 w-full h-11 cursor-pointer">
     <span :class="textColor" class="font-outfit">{{ title }}</span>
   </div>
 </template>
