@@ -1,2 +1,17 @@
 @config "../tailwind.config.js";
+
+/* Use @layer to properly tree-shake unused styles */
+@layer base {
+  /* Critical rendering path styles */
+  body {
+    @apply bg-dark-primary font-outfit text-white overscroll-none;
+    text-rendering: optimizeSpeed;
+  }
+  
+  /* Content-visibility for off-screen elements */
+  .cv-auto {
+    content-visibility: auto;
+  }
+}
+
 @import "tailwindcss";

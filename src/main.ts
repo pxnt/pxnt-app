@@ -4,13 +4,15 @@ import App from '~/App.vue'
 import { createPinia } from 'pinia'
 import useRootStore from '~/stores/root'
 
-const pinia = createPinia()
-
 const app = createApp(App)
-
+const pinia = createPinia()
 app.use(pinia)
 
-const rootStore = useRootStore()
-rootStore.init()
-
+// Mount first to improve LCP
 app.mount('#app')
+
+// Defer non-critical initialization
+requestIdleCallback(() => {
+  const rootStore = useRootStore()
+  rootStore.init()
+})

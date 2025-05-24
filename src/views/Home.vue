@@ -10,7 +10,7 @@
         <Profile class="md:sticky md:top-10" />
       </Transition>
       <Transition name="fade-in-down-content" appear>
-        <Content class="" />
+        <Content class="cv-auto" :style="{ 'contain-intrinsic-size': '1px 5000px' }" />
       </Transition>
 
     </div>
@@ -47,7 +47,10 @@ onMounted(() => {
   // Set initial scrollbar height
   document.documentElement.style.setProperty('--scrollbar-height', `${minHeight}px`)
 
-  addSessionTracking();
+  // Defer non-critical tracking
+  requestIdleCallback(() => {
+    addSessionTracking();
+  })
 })
 </script>
 
@@ -55,6 +58,7 @@ onMounted(() => {
 /* Fade In Down Profile */
 .fade-in-down-profile-enter-active {
   transition: all 0.4s cubic-bezier(0.27, 0, 0.51, 1);
+  will-change: transform, opacity;
 }
 
 .fade-in-down-profile-leave-active {
@@ -77,6 +81,7 @@ onMounted(() => {
 .fade-in-down-content-enter-active {
   transition: all 0.5s cubic-bezier(0.44, 0, 0.56, 1);
   transition-delay: 0.2s;
+  will-change: transform, opacity;
 }
 
 .fade-in-down-content-leave-active {

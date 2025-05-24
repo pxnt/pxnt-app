@@ -1,12 +1,15 @@
-
 <template>
   <div
     class="relative w-full md:min-w-[343px] max-h-max flex flex-col items-center px-6 py-7 bg-dark-secondary rounded-xl">
     <Logo class="absolute -top-7 -left-7 w-20 h-20" />
     <div class="profile w-60 h-70 rounded-lg">
       <img
-        src="/src/assets/profile_img.jpeg"
-        alt="Profile" class="w-full h-full object-cover rounded-lg">
+        src="/src/assets/profile_img.webp"
+        alt="Profile" 
+        class="w-full h-full object-cover rounded-lg"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async">
     </div>
 
     <div class="name mt-6 text-4xl whitespace-nowrap font-semibold text-white font-outfit">
