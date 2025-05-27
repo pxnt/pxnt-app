@@ -1,10 +1,17 @@
-<script setup lang="ts">
-import Home from './views/Home.vue'
-</script>
-
 <template>
   <Home />
 </template>
+
+<script setup lang="ts">
+import { onBeforeMount } from 'vue'
+import Home from './views/Home.vue'
+
+onBeforeMount(() => {
+  if (window.location.pathname !== '/') {
+    window.history.replaceState({}, '', '/')
+  }
+})
+</script>
 
 <style scoped>
 .logo {

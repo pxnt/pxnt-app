@@ -7,5 +7,5 @@
 
 [[redirects]]
   from = "/*"
-  to = "https://pxnt.me"
+  to = "/index.html"
   status = 200
